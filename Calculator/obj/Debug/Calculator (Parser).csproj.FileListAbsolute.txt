@@ -1,0 +1,13 @@
+C:\Users\Raider\source\repos\Calculator (Parser Method)\Calculator\bin\Debug\Calculator.exe.config
+C:\Users\Raider\source\repos\Calculator (Parser Method)\Calculator\bin\Debug\Calculator.exe
+C:\Users\Raider\source\repos\Calculator (Parser Method)\Calculator\bin\Debug\Calculator.pdb
+C:\Users\Raider\source\repos\Calculator (Parser Method)\Calculator\bin\Debug\Guna.UI2.dll
+C:\Users\Raider\source\repos\Calculator (Parser Method)\Calculator\bin\Debug\MathParser.org-mXparser.dll
+C:\Users\Raider\source\repos\Calculator (Parser Method)\Calculator\obj\Debug\Calculator (Parser).csproj.AssemblyReference.cache
+C:\Users\Raider\source\repos\Calculator (Parser Method)\Calculator\obj\Debug\Calculator.Form1.resources
+C:\Users\Raider\source\repos\Calculator (Parser Method)\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+C:\Users\Raider\source\repos\Calculator (Parser Method)\Calculator\obj\Debug\Calculator (Parser).csproj.GenerateResource.cache
+C:\Users\Raider\source\repos\Calculator (Parser Method)\Calculator\obj\Debug\Calculator (Parser).csproj.CoreCompileInputs.cache
+C:\Users\Raider\source\repos\Calculator (Parser Method)\Calculator\obj\Debug\Calculator (Parser).csproj.CopyComplete
+C:\Users\Raider\source\repos\Calculator (Parser Method)\Calculator\obj\Debug\Calculator.exe
+C:\Users\Raider\source\repos\Calculator (Parser Method)\Calculator\obj\Debug\Calculator.pdb
