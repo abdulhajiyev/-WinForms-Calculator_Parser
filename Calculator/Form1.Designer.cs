@@ -30,6 +30,8 @@ namespace Calculator
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Guna.UI2.AnimatorNS.Animation animation4 = new Guna.UI2.AnimatorNS.Animation();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.roundCorners = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.resultPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.resultLbl = new System.Windows.Forms.Label();
@@ -38,7 +40,7 @@ namespace Calculator
             this.signsPanel = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.equalBtn = new Guna.UI2.WinForms.Guna2TileButton();
             this.addBtn = new Guna.UI2.WinForms.Guna2TileButton();
-            this.delBtn = new Guna.UI2.WinForms.Guna2TileButton();
+            this.ceBtn = new Guna.UI2.WinForms.Guna2TileButton();
             this.allClrBtn = new Guna.UI2.WinForms.Guna2GradientTileButton();
             this.subBtn = new Guna.UI2.WinForms.Guna2TileButton();
             this.divBtn = new Guna.UI2.WinForms.Guna2TileButton();
@@ -56,6 +58,7 @@ namespace Calculator
             this.btn4 = new Guna.UI2.WinForms.Guna2TileButton();
             this.btn8 = new Guna.UI2.WinForms.Guna2TileButton();
             this.btn7 = new Guna.UI2.WinForms.Guna2TileButton();
+            this.guna2Transition1 = new Guna.UI2.WinForms.Guna2Transition();
             this.resultPanel.SuspendLayout();
             this.signsPanel.SuspendLayout();
             this.numbersPanel.SuspendLayout();
@@ -72,6 +75,7 @@ namespace Calculator
             this.resultPanel.Controls.Add(this.resultLbl);
             this.resultPanel.Controls.Add(this.minBtn);
             this.resultPanel.Controls.Add(this.closeBtn);
+            this.guna2Transition1.SetDecoration(this.resultPanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.resultPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.resultPanel.FillColor = System.Drawing.Color.Black;
             this.resultPanel.FillColor2 = System.Drawing.Color.Black;
@@ -84,20 +88,23 @@ namespace Calculator
             // resultLbl
             // 
             this.resultLbl.BackColor = System.Drawing.Color.Transparent;
-            this.resultLbl.Font = new System.Drawing.Font("Gotham Rounded Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resultLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(76)))), ((int)(((byte)(76)))));
+            this.guna2Transition1.SetDecoration(this.resultLbl, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.resultLbl.Font = new System.Drawing.Font("Gotham Rounded", 14.25F, System.Drawing.FontStyle.Bold);
+            this.resultLbl.ForeColor = System.Drawing.Color.White;
             this.resultLbl.Location = new System.Drawing.Point(100, 25);
             this.resultLbl.Margin = new System.Windows.Forms.Padding(5, 25, 5, 25);
             this.resultLbl.Name = "resultLbl";
             this.resultLbl.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.resultLbl.Size = new System.Drawing.Size(386, 50);
             this.resultLbl.TabIndex = 1;
+            this.resultLbl.Text = "0";
             this.resultLbl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // minBtn
             // 
             this.minBtn.BackColor = System.Drawing.Color.Transparent;
             this.minBtn.CheckedState.Parent = this.minBtn;
+            this.guna2Transition1.SetDecoration(this.minBtn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.minBtn.HoverState.ImageSize = new System.Drawing.Size(10, 10);
             this.minBtn.HoverState.Parent = this.minBtn;
             this.minBtn.Image = global::Calculator.Properties.Resources.minimize;
@@ -116,6 +123,7 @@ namespace Calculator
             // 
             this.closeBtn.BackColor = System.Drawing.Color.Transparent;
             this.closeBtn.CheckedState.Parent = this.closeBtn;
+            this.guna2Transition1.SetDecoration(this.closeBtn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.closeBtn.HoverState.ImageSize = new System.Drawing.Size(10, 10);
             this.closeBtn.HoverState.Parent = this.closeBtn;
             this.closeBtn.Image = global::Calculator.Properties.Resources.close;
@@ -135,11 +143,12 @@ namespace Calculator
             this.signsPanel.BackColor = System.Drawing.Color.Transparent;
             this.signsPanel.Controls.Add(this.equalBtn);
             this.signsPanel.Controls.Add(this.addBtn);
-            this.signsPanel.Controls.Add(this.delBtn);
+            this.signsPanel.Controls.Add(this.ceBtn);
             this.signsPanel.Controls.Add(this.allClrBtn);
             this.signsPanel.Controls.Add(this.subBtn);
             this.signsPanel.Controls.Add(this.divBtn);
             this.signsPanel.Controls.Add(this.multBtn);
+            this.guna2Transition1.SetDecoration(this.signsPanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.signsPanel.Dock = System.Windows.Forms.DockStyle.Right;
             this.signsPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(4)))), ((int)(((byte)(1)))));
             this.signsPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(163)))), ((int)(((byte)(1)))));
@@ -159,6 +168,7 @@ namespace Calculator
             this.equalBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.equalBtn.CheckedState.Parent = this.equalBtn;
             this.equalBtn.CustomImages.Parent = this.equalBtn;
+            this.guna2Transition1.SetDecoration(this.equalBtn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.equalBtn.FillColor = System.Drawing.Color.Transparent;
             this.equalBtn.Font = new System.Drawing.Font("Gotham Rounded", 15.75F, System.Drawing.FontStyle.Bold);
             this.equalBtn.ForeColor = System.Drawing.Color.White;
@@ -170,46 +180,53 @@ namespace Calculator
             this.equalBtn.ShadowDecoration.Parent = this.equalBtn;
             this.equalBtn.Size = new System.Drawing.Size(100, 200);
             this.equalBtn.TabIndex = 1;
+            this.equalBtn.Tag = "=";
             this.equalBtn.Text = "=";
             this.equalBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.equalBtn.Click += new System.EventHandler(this.equalBtn_Click);
             // 
             // addBtn
             // 
             this.addBtn.Animated = true;
             this.addBtn.CheckedState.Parent = this.addBtn;
             this.addBtn.CustomImages.Parent = this.addBtn;
+            this.guna2Transition1.SetDecoration(this.addBtn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.addBtn.FillColor = System.Drawing.Color.White;
             this.addBtn.Font = new System.Drawing.Font("Gotham Rounded", 15.75F, System.Drawing.FontStyle.Bold);
             this.addBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(57)))), ((int)(((byte)(76)))));
             this.addBtn.HoverState.Parent = this.addBtn;
-            this.addBtn.Location = new System.Drawing.Point(0, 200);
+            this.addBtn.Location = new System.Drawing.Point(0, 0);
             this.addBtn.Margin = new System.Windows.Forms.Padding(0);
             this.addBtn.Name = "addBtn";
             this.addBtn.ShadowDecoration.Parent = this.addBtn;
             this.addBtn.Size = new System.Drawing.Size(100, 100);
             this.addBtn.TabIndex = 1;
+            this.addBtn.Tag = "+";
             this.addBtn.Text = "+";
             this.addBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.addBtn.Click += new System.EventHandler(this.signs_Click);
             // 
-            // delBtn
+            // ceBtn
             // 
-            this.delBtn.Animated = true;
-            this.delBtn.BackColor = System.Drawing.Color.Transparent;
-            this.delBtn.CheckedState.Parent = this.delBtn;
-            this.delBtn.CustomImages.Parent = this.delBtn;
-            this.delBtn.FillColor = System.Drawing.Color.White;
-            this.delBtn.Font = new System.Drawing.Font("Gotham Rounded", 15.75F, System.Drawing.FontStyle.Bold);
-            this.delBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(57)))), ((int)(((byte)(76)))));
-            this.delBtn.HoverState.Parent = this.delBtn;
-            this.delBtn.ImageSize = new System.Drawing.Size(25, 25);
-            this.delBtn.Location = new System.Drawing.Point(100, 100);
-            this.delBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.delBtn.Name = "delBtn";
-            this.delBtn.ShadowDecoration.Parent = this.delBtn;
-            this.delBtn.Size = new System.Drawing.Size(100, 100);
-            this.delBtn.TabIndex = 0;
-            this.delBtn.Text = "C";
-            this.delBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.ceBtn.Animated = true;
+            this.ceBtn.BackColor = System.Drawing.Color.Transparent;
+            this.ceBtn.CheckedState.Parent = this.ceBtn;
+            this.ceBtn.CustomImages.Parent = this.ceBtn;
+            this.guna2Transition1.SetDecoration(this.ceBtn, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.ceBtn.FillColor = System.Drawing.Color.White;
+            this.ceBtn.Font = new System.Drawing.Font("Gotham Rounded", 15.75F, System.Drawing.FontStyle.Bold);
+            this.ceBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(57)))), ((int)(((byte)(76)))));
+            this.ceBtn.HoverState.Parent = this.ceBtn;
+            this.ceBtn.ImageSize = new System.Drawing.Size(25, 25);
+            this.ceBtn.Location = new System.Drawing.Point(100, 100);
+            this.ceBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.ceBtn.Name = "ceBtn";
+            this.ceBtn.ShadowDecoration.Parent = this.ceBtn;
+            this.ceBtn.Size = new System.Drawing.Size(100, 100);
+            this.ceBtn.TabIndex = 0;
+            this.ceBtn.Text = "←";
+            this.ceBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.ceBtn.Click += new System.EventHandler(this.ceBtn_Click);
             // 
             // allClrBtn
             // 
@@ -217,6 +234,7 @@ namespace Calculator
             this.allClrBtn.BackColor = System.Drawing.Color.Transparent;
             this.allClrBtn.CheckedState.Parent = this.allClrBtn;
             this.allClrBtn.CustomImages.Parent = this.allClrBtn;
+            this.guna2Transition1.SetDecoration(this.allClrBtn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.allClrBtn.FillColor = System.Drawing.Color.White;
             this.allClrBtn.FillColor2 = System.Drawing.Color.White;
             this.allClrBtn.Font = new System.Drawing.Font("Gotham Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -230,6 +248,7 @@ namespace Calculator
             this.allClrBtn.TabIndex = 1;
             this.allClrBtn.Text = "AC";
             this.allClrBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.allClrBtn.Click += new System.EventHandler(this.allClrBtn_Click);
             // 
             // subBtn
             // 
@@ -237,18 +256,21 @@ namespace Calculator
             this.subBtn.BackColor = System.Drawing.Color.Transparent;
             this.subBtn.CheckedState.Parent = this.subBtn;
             this.subBtn.CustomImages.Parent = this.subBtn;
+            this.guna2Transition1.SetDecoration(this.subBtn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.subBtn.FillColor = System.Drawing.Color.White;
             this.subBtn.Font = new System.Drawing.Font("Gotham Rounded", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(57)))), ((int)(((byte)(76)))));
             this.subBtn.HoverState.Parent = this.subBtn;
-            this.subBtn.Location = new System.Drawing.Point(0, 300);
+            this.subBtn.Location = new System.Drawing.Point(0, 100);
             this.subBtn.Margin = new System.Windows.Forms.Padding(0);
             this.subBtn.Name = "subBtn";
             this.subBtn.ShadowDecoration.Parent = this.subBtn;
             this.subBtn.Size = new System.Drawing.Size(100, 100);
             this.subBtn.TabIndex = 0;
+            this.subBtn.Tag = "-";
             this.subBtn.Text = "-";
             this.subBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.subBtn.Click += new System.EventHandler(this.signs_Click);
             // 
             // divBtn
             // 
@@ -256,18 +278,21 @@ namespace Calculator
             this.divBtn.BackColor = System.Drawing.Color.Transparent;
             this.divBtn.CheckedState.Parent = this.divBtn;
             this.divBtn.CustomImages.Parent = this.divBtn;
+            this.guna2Transition1.SetDecoration(this.divBtn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.divBtn.FillColor = System.Drawing.Color.White;
             this.divBtn.Font = new System.Drawing.Font("Gotham Rounded", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.divBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(57)))), ((int)(((byte)(76)))));
             this.divBtn.HoverState.Parent = this.divBtn;
-            this.divBtn.Location = new System.Drawing.Point(0, 0);
+            this.divBtn.Location = new System.Drawing.Point(0, 300);
             this.divBtn.Margin = new System.Windows.Forms.Padding(0);
             this.divBtn.Name = "divBtn";
             this.divBtn.ShadowDecoration.Parent = this.divBtn;
             this.divBtn.Size = new System.Drawing.Size(100, 100);
             this.divBtn.TabIndex = 0;
+            this.divBtn.Tag = "/";
             this.divBtn.Text = "÷";
             this.divBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.divBtn.Click += new System.EventHandler(this.signs_Click);
             // 
             // multBtn
             // 
@@ -275,18 +300,21 @@ namespace Calculator
             this.multBtn.BackColor = System.Drawing.Color.Transparent;
             this.multBtn.CheckedState.Parent = this.multBtn;
             this.multBtn.CustomImages.Parent = this.multBtn;
+            this.guna2Transition1.SetDecoration(this.multBtn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.multBtn.FillColor = System.Drawing.Color.White;
             this.multBtn.Font = new System.Drawing.Font("Gotham Rounded", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.multBtn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(57)))), ((int)(((byte)(76)))));
             this.multBtn.HoverState.Parent = this.multBtn;
-            this.multBtn.Location = new System.Drawing.Point(0, 100);
+            this.multBtn.Location = new System.Drawing.Point(0, 200);
             this.multBtn.Margin = new System.Windows.Forms.Padding(0);
             this.multBtn.Name = "multBtn";
             this.multBtn.ShadowDecoration.Parent = this.multBtn;
             this.multBtn.Size = new System.Drawing.Size(100, 100);
             this.multBtn.TabIndex = 0;
+            this.multBtn.Tag = "*";
             this.multBtn.Text = "*";
             this.multBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.multBtn.Click += new System.EventHandler(this.signs_Click);
             // 
             // numbersPanel
             // 
@@ -302,6 +330,7 @@ namespace Calculator
             this.numbersPanel.Controls.Add(this.btn4);
             this.numbersPanel.Controls.Add(this.btn8);
             this.numbersPanel.Controls.Add(this.btn7);
+            this.guna2Transition1.SetDecoration(this.numbersPanel, Guna.UI2.AnimatorNS.DecorationType.None);
             this.numbersPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numbersPanel.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(58)))), ((int)(((byte)(58)))));
             this.numbersPanel.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(1)))), ((int)(((byte)(1)))));
@@ -318,6 +347,7 @@ namespace Calculator
             this.dotBtn.BackColor = System.Drawing.Color.Transparent;
             this.dotBtn.CheckedState.Parent = this.dotBtn;
             this.dotBtn.CustomImages.Parent = this.dotBtn;
+            this.guna2Transition1.SetDecoration(this.dotBtn, Guna.UI2.AnimatorNS.DecorationType.None);
             this.dotBtn.FillColor = System.Drawing.Color.Transparent;
             this.dotBtn.Font = new System.Drawing.Font("Gotham Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dotBtn.ForeColor = System.Drawing.Color.White;
@@ -330,6 +360,7 @@ namespace Calculator
             this.dotBtn.TabIndex = 0;
             this.dotBtn.Text = ".";
             this.dotBtn.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.dotBtn.Click += new System.EventHandler(this.btns_Click);
             // 
             // btn3
             // 
@@ -337,6 +368,7 @@ namespace Calculator
             this.btn3.BackColor = System.Drawing.Color.Transparent;
             this.btn3.CheckedState.Parent = this.btn3;
             this.btn3.CustomImages.Parent = this.btn3;
+            this.guna2Transition1.SetDecoration(this.btn3, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btn3.FillColor = System.Drawing.Color.Transparent;
             this.btn3.Font = new System.Drawing.Font("Gotham Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn3.ForeColor = System.Drawing.Color.White;
@@ -347,8 +379,10 @@ namespace Calculator
             this.btn3.ShadowDecoration.Parent = this.btn3;
             this.btn3.Size = new System.Drawing.Size(100, 100);
             this.btn3.TabIndex = 0;
+            this.btn3.Tag = "3";
             this.btn3.Text = "3";
             this.btn3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.btn3.Click += new System.EventHandler(this.btns_Click);
             // 
             // btn0
             // 
@@ -356,6 +390,7 @@ namespace Calculator
             this.btn0.BackColor = System.Drawing.Color.Transparent;
             this.btn0.CheckedState.Parent = this.btn0;
             this.btn0.CustomImages.Parent = this.btn0;
+            this.guna2Transition1.SetDecoration(this.btn0, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btn0.FillColor = System.Drawing.Color.Transparent;
             this.btn0.Font = new System.Drawing.Font("Gotham Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn0.ForeColor = System.Drawing.Color.White;
@@ -366,8 +401,10 @@ namespace Calculator
             this.btn0.ShadowDecoration.Parent = this.btn0;
             this.btn0.Size = new System.Drawing.Size(100, 100);
             this.btn0.TabIndex = 0;
+            this.btn0.Tag = "0";
             this.btn0.Text = "0";
             this.btn0.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.btn0.Click += new System.EventHandler(this.btns_Click);
             // 
             // btn6
             // 
@@ -375,6 +412,7 @@ namespace Calculator
             this.btn6.BackColor = System.Drawing.Color.Transparent;
             this.btn6.CheckedState.Parent = this.btn6;
             this.btn6.CustomImages.Parent = this.btn6;
+            this.guna2Transition1.SetDecoration(this.btn6, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btn6.FillColor = System.Drawing.Color.Transparent;
             this.btn6.Font = new System.Drawing.Font("Gotham Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn6.ForeColor = System.Drawing.Color.White;
@@ -385,8 +423,10 @@ namespace Calculator
             this.btn6.ShadowDecoration.Parent = this.btn6;
             this.btn6.Size = new System.Drawing.Size(100, 100);
             this.btn6.TabIndex = 0;
+            this.btn6.Tag = "6";
             this.btn6.Text = "6";
             this.btn6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.btn6.Click += new System.EventHandler(this.btns_Click);
             // 
             // btn9
             // 
@@ -394,6 +434,7 @@ namespace Calculator
             this.btn9.BackColor = System.Drawing.Color.Transparent;
             this.btn9.CheckedState.Parent = this.btn9;
             this.btn9.CustomImages.Parent = this.btn9;
+            this.guna2Transition1.SetDecoration(this.btn9, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btn9.FillColor = System.Drawing.Color.Transparent;
             this.btn9.Font = new System.Drawing.Font("Gotham Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn9.ForeColor = System.Drawing.Color.White;
@@ -404,8 +445,10 @@ namespace Calculator
             this.btn9.ShadowDecoration.Parent = this.btn9;
             this.btn9.Size = new System.Drawing.Size(100, 100);
             this.btn9.TabIndex = 0;
+            this.btn9.Tag = "9";
             this.btn9.Text = "9";
             this.btn9.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.btn9.Click += new System.EventHandler(this.btns_Click);
             // 
             // plusMinBtn
             // 
@@ -413,6 +456,8 @@ namespace Calculator
             this.plusMinBtn.BackColor = System.Drawing.Color.Transparent;
             this.plusMinBtn.CheckedState.Parent = this.plusMinBtn;
             this.plusMinBtn.CustomImages.Parent = this.plusMinBtn;
+            this.guna2Transition1.SetDecoration(this.plusMinBtn, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.plusMinBtn.Enabled = false;
             this.plusMinBtn.FillColor = System.Drawing.Color.Transparent;
             this.plusMinBtn.Font = new System.Drawing.Font("Gotham Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.plusMinBtn.ForeColor = System.Drawing.Color.White;
@@ -432,6 +477,7 @@ namespace Calculator
             this.bnt2.BackColor = System.Drawing.Color.Transparent;
             this.bnt2.CheckedState.Parent = this.bnt2;
             this.bnt2.CustomImages.Parent = this.bnt2;
+            this.guna2Transition1.SetDecoration(this.bnt2, Guna.UI2.AnimatorNS.DecorationType.None);
             this.bnt2.FillColor = System.Drawing.Color.Transparent;
             this.bnt2.Font = new System.Drawing.Font("Gotham Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnt2.ForeColor = System.Drawing.Color.White;
@@ -442,8 +488,10 @@ namespace Calculator
             this.bnt2.ShadowDecoration.Parent = this.bnt2;
             this.bnt2.Size = new System.Drawing.Size(100, 100);
             this.bnt2.TabIndex = 0;
+            this.bnt2.Tag = "2";
             this.bnt2.Text = "2";
             this.bnt2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.bnt2.Click += new System.EventHandler(this.btns_Click);
             // 
             // btn1
             // 
@@ -451,6 +499,7 @@ namespace Calculator
             this.btn1.BackColor = System.Drawing.Color.Transparent;
             this.btn1.CheckedState.Parent = this.btn1;
             this.btn1.CustomImages.Parent = this.btn1;
+            this.guna2Transition1.SetDecoration(this.btn1, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btn1.FillColor = System.Drawing.Color.Transparent;
             this.btn1.Font = new System.Drawing.Font("Gotham Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn1.ForeColor = System.Drawing.Color.White;
@@ -461,8 +510,10 @@ namespace Calculator
             this.btn1.ShadowDecoration.Parent = this.btn1;
             this.btn1.Size = new System.Drawing.Size(100, 100);
             this.btn1.TabIndex = 0;
+            this.btn1.Tag = "1";
             this.btn1.Text = "1";
             this.btn1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.btn1.Click += new System.EventHandler(this.btns_Click);
             // 
             // btn5
             // 
@@ -470,6 +521,7 @@ namespace Calculator
             this.btn5.BackColor = System.Drawing.Color.Transparent;
             this.btn5.CheckedState.Parent = this.btn5;
             this.btn5.CustomImages.Parent = this.btn5;
+            this.guna2Transition1.SetDecoration(this.btn5, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btn5.FillColor = System.Drawing.Color.Transparent;
             this.btn5.Font = new System.Drawing.Font("Gotham Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn5.ForeColor = System.Drawing.Color.White;
@@ -480,8 +532,10 @@ namespace Calculator
             this.btn5.ShadowDecoration.Parent = this.btn5;
             this.btn5.Size = new System.Drawing.Size(100, 100);
             this.btn5.TabIndex = 0;
+            this.btn5.Tag = "5";
             this.btn5.Text = "5";
             this.btn5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.btn5.Click += new System.EventHandler(this.btns_Click);
             // 
             // btn4
             // 
@@ -489,6 +543,7 @@ namespace Calculator
             this.btn4.BackColor = System.Drawing.Color.Transparent;
             this.btn4.CheckedState.Parent = this.btn4;
             this.btn4.CustomImages.Parent = this.btn4;
+            this.guna2Transition1.SetDecoration(this.btn4, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btn4.FillColor = System.Drawing.Color.Transparent;
             this.btn4.Font = new System.Drawing.Font("Gotham Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn4.ForeColor = System.Drawing.Color.White;
@@ -499,8 +554,10 @@ namespace Calculator
             this.btn4.ShadowDecoration.Parent = this.btn4;
             this.btn4.Size = new System.Drawing.Size(100, 100);
             this.btn4.TabIndex = 0;
+            this.btn4.Tag = "4";
             this.btn4.Text = "4";
             this.btn4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.btn4.Click += new System.EventHandler(this.btns_Click);
             // 
             // btn8
             // 
@@ -508,6 +565,7 @@ namespace Calculator
             this.btn8.BackColor = System.Drawing.Color.Transparent;
             this.btn8.CheckedState.Parent = this.btn8;
             this.btn8.CustomImages.Parent = this.btn8;
+            this.guna2Transition1.SetDecoration(this.btn8, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btn8.FillColor = System.Drawing.Color.Transparent;
             this.btn8.Font = new System.Drawing.Font("Gotham Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn8.ForeColor = System.Drawing.Color.White;
@@ -518,8 +576,10 @@ namespace Calculator
             this.btn8.ShadowDecoration.Parent = this.btn8;
             this.btn8.Size = new System.Drawing.Size(100, 100);
             this.btn8.TabIndex = 0;
+            this.btn8.Tag = "8";
             this.btn8.Text = "8";
             this.btn8.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.btn8.Click += new System.EventHandler(this.btns_Click);
             // 
             // btn7
             // 
@@ -527,6 +587,7 @@ namespace Calculator
             this.btn7.BackColor = System.Drawing.Color.Transparent;
             this.btn7.CheckedState.Parent = this.btn7;
             this.btn7.CustomImages.Parent = this.btn7;
+            this.guna2Transition1.SetDecoration(this.btn7, Guna.UI2.AnimatorNS.DecorationType.None);
             this.btn7.FillColor = System.Drawing.Color.Transparent;
             this.btn7.Font = new System.Drawing.Font("Gotham Rounded", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn7.ForeColor = System.Drawing.Color.White;
@@ -537,8 +598,31 @@ namespace Calculator
             this.btn7.ShadowDecoration.Parent = this.btn7;
             this.btn7.Size = new System.Drawing.Size(100, 100);
             this.btn7.TabIndex = 0;
+            this.btn7.Tag = "7";
             this.btn7.Text = "7";
             this.btn7.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            this.btn7.Click += new System.EventHandler(this.btns_Click);
+            // 
+            // guna2Transition1
+            // 
+            this.guna2Transition1.AnimationType = Guna.UI2.AnimatorNS.AnimationType.Leaf;
+            this.guna2Transition1.Cursor = null;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 1F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.guna2Transition1.DefaultAnimation = animation4;
             // 
             // Form1
             // 
@@ -548,6 +632,7 @@ namespace Calculator
             this.Controls.Add(this.numbersPanel);
             this.Controls.Add(this.signsPanel);
             this.Controls.Add(this.resultPanel);
+            this.guna2Transition1.SetDecoration(this, Guna.UI2.AnimatorNS.DecorationType.None);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -565,7 +650,7 @@ namespace Calculator
         private Guna.UI2.WinForms.Guna2GradientPanel numbersPanel;
         private Guna.UI2.WinForms.Guna2GradientPanel signsPanel;
         private Guna.UI2.WinForms.Guna2TileButton subBtn;
-        private Guna.UI2.WinForms.Guna2TileButton delBtn;
+        private Guna.UI2.WinForms.Guna2TileButton ceBtn;
         private Guna.UI2.WinForms.Guna2TileButton divBtn;
         private Guna.UI2.WinForms.Guna2GradientPanel resultPanel;
         private Guna.UI2.WinForms.Guna2GradientTileButton allClrBtn;
@@ -587,6 +672,7 @@ namespace Calculator
         private System.Windows.Forms.Label resultLbl;
         private Guna.UI2.WinForms.Guna2TileButton equalBtn;
         private Guna.UI2.WinForms.Guna2TileButton addBtn;
+        private Guna.UI2.WinForms.Guna2Transition guna2Transition1;
     }
 }
 
